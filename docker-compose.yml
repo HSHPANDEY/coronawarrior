@@ -1,0 +1,9 @@
+version : '3'
+
+services :
+    nginx-server:
+        restart : on-failure
+        build: .
+        ports:
+            - "80:80"
+            
