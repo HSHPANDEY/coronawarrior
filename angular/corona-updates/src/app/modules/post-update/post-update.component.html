@@ -1,0 +1,38 @@
+<div>
+    <div class="jumbotron text-center font-weight-light var-font-heading">We are Corona Warriors just like you</div>
+    <div class="p-4 d-flex  flex-column justify-content-center col-md-6 col-sm-12">
+        <form class="border border-primary rounded p-3">
+            <h6 class="p-2 bg-primary text-white rounded mb-3">Update Inventory Details</h6>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Search Query for</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <ng-container *ngFor="let item of queries">
+                        <option *ngIf="item.active" value="{{item.value}}">{{item.label}}</option>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Contact No.</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="9999999999" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            </div>
+
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                <div class="invalid-feedback">Example invalid custom file feedback</div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" (click)="postUpdate()" class="btn btn-primary mt-2">
+                    Post this update
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
