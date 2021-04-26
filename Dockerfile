@@ -21,6 +21,8 @@
 #cd angular/corona-updates
 #npm install
 #ng build --prod (if Angular CLI is installed or npm )
-FROM nginx
+FROM nginx:1.12-alpine
+RUN rm etc/nginx/conf.d/default.conf
 COPY angular/corona-updates/dist/corona-updates /usr/share/nginx/html
+COPY conf/nginx /etc/nginx/conf.d/  
 #------------------------------- End of Approach 1 --------------------------------

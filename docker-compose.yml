@@ -6,4 +6,6 @@ services :
         build: .
         ports:
             - "80:80"
-            
+        healthcheck:
+            test: ["CMD", "wget", "-q", "-s", "http://localhost/"]    
+        
